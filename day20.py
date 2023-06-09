@@ -1,18 +1,10 @@
-from flask import Flask
+from flask import Flask,render_template
 app = Flask(__name__)
 
 
 @app.route('/')
 def some_funcion():
-    return '''
-    <html>
-    <head>
-    <title>home</title></head>
-    <body>
-    <h1>hello !!!!</h1>
-    </body>
-    </html>
-    '''
+    return render_template('home.html')
 
 
 app.run(debug=True)
