@@ -12,6 +12,6 @@ def some_funcion2(name):
     print(name)
     return render_template(
         'home.html',name_value=name
-        )
+    )
 
 app.run(debug=True)
