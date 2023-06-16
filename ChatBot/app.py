@@ -1,7 +1,6 @@
 import nltk
 from nltk.chat.util import Chat
 
-
 #Rules for chat
 rules = [
     (r"hello",["hi","hello"]),
@@ -9,17 +8,20 @@ rules = [
 ]
 cb = Chat(rules)
 
+#######################------FLASK-------################################
 from flask import Flask,render_template,request,redirect
 app = Flask(__name__)
-
 
 @app.route('/')
 def some_funcion():
     return "hii"
 
-@app.route('/chat')
-def some_funcion2():
-    return render_template('mypage.html')
-
+@app.route('/chat' ,methods=['POST','GET'])
+def chatBot():
+    if request.method == "POST":
+        ques = request.form['ask_me']
+        res = cb.respond(ques)
+        print(res)
+    return render_template('home.html')
 
 app.run(debug=True)
