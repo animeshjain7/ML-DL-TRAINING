@@ -3,16 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <title>MY ChatBot</title>
 </head>
 <body>
-    <h1>I am Your Personal ChatBot Assistance</h1>
-    <h4>Talk to me</h4>
-    <form method="post">
-        <input type="text", name="ask_me">
+    <div class="container">
+
+        <h1>I am Your Personal ChatBot Assistance</h1>
+        <h4>Talk to me</h4>
+        <form method="post">
+            <input type="text" name="ask_me" placeholder="Enter Text" >
+            <br>
+            <br>
+            <input type="submit"  value="send from here">
+        </form>
         <br>
         <br>
-        <input type="submit" , value="send from here">
-    </form>
-</body>
+        <h2>Response from ChatBot :- {{response_from_flask}}</h2>
+    </div>
+        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    </body>
 </html>

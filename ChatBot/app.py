@@ -3,7 +3,7 @@ from nltk.chat.util import Chat
 
 #Rules for chat
 rules = [
-    (r"hello",["hi","hello"]),
+    (r"hello|hi",["hi","hello"]),
     (r"ac is not working",["pankha chalao","sorry i cant control weather"])
 ]
 cb = Chat(rules)
@@ -18,10 +18,13 @@ def some_funcion():
 
 @app.route('/chat' ,methods=['POST','GET'])
 def chatBot():
+    # res = ""
     if request.method == "POST":
         ques = request.form['ask_me']
         res = cb.respond(ques)
-        print(res)
-    return render_template('home.html')
-
+        print(res)  
+        return render_template('home.html',response_from_flask = res)
+    else:
+        return render_template('home.html')
+    
 app.run(debug=True)
